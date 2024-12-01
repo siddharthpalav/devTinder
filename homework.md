@@ -19,7 +19,17 @@
 
 - Install postman app and make a workspace/collection > test API call
 - Write logic to handle GET, POST, PATCH, DELETE API calls and test them on Postman
-- Explore routing and use of ?, + , (), * in the routes
-- Use of regex in routes /a/ /.*fly$/
-- Reading the query params in the routes 
+- Explore routing and use of ?, + , (), \* in the routes
+- Use of regex in routes /a/ /.\*fly$/
+- Reading the query params in the routes
 - Reading the dynamically generated
+
+- Multiple Route Handlers - Play with the code
+- next()
+- next function and errors along with res.send()
+- app.use('/route', rH, [rH2, rh3], rH4, rH5)
+- What is middleware? Why do we need it?
+- How express JS basically handles requests behind the scenes
+- Difference between app.use and app.all
+- Write a dummy auth middleware for an admin
+- Write a dummy auth middleware for all the user route except /user/login
