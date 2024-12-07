@@ -11,7 +11,7 @@ app.post("/signup", async (req, res) => {
   const user = new User(req.body);
 
   try {
-    await User.save();
+    await user.save();
 
     res.send("User Added Successfully");
   } catch (error) {
