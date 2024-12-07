@@ -57,10 +57,11 @@
 - What are options in a Model.findOneAndUpdate method, explore more about it
 - API - Update the user with emai ID
 
-
 - Explore schematype options from the documentation
 - Add required, unique, lowercase, min, minLength, trim
-- Add default 
+- Add default
 - Create a custom validate function for gender
 - Improve the DB schema - PUT all appropriate validation on each field in Schema
 - Add timestamps to the userSchema
+- Add API level validations on Patch request & signup POST api
+- DATA Sanitization - Add API validation for each field
