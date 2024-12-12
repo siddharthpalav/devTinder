@@ -68,3 +68,29 @@
 - Install validator
 - Explore validator library function and Use validator functions for password, email, url
 - NEVER TRUST req.body
+
+- Validate data in Signup API
+- Install bcrypt package
+- Create PasswordHash using bcrypt.hash & save the user in encrypted password
+- Create a login API
+- Compare passwords and throw errors if email or password is invalid
+
+- install cookie-parser
+- just send a dummy cookie to user
+- Create GET /profile API and check if you get the cookie back
+- install jsonwebtoken
+- // IN login API, after email and password validattion, create a JWT token and send it to user in cookies
+- read the cookies inside your profile API and find the logged in user
+- userAuth Middleware
+- Add the userAuth middleware in profile API and a new sendConnectionRequest API
+- Set the expiry of JWT token and cookies to 7 days
+- Create userSchema method to getJWT()
+- Create userSchema method to comparePassword(passwordInputByUser)
+
+- Explore tinder APIs
+- Create a list of all API you can think of in Dev Tinder
+- Group multiple routes under respective routers
+- Read documentation for express.Router
+- Create routes folder for managing auth, profile, request routers
+- create authRouter, profileRouter, requestRouter
+- Import these routers in app.js
