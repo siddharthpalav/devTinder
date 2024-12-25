@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       minLength: 4,
       maxLength: 50,
+      index: true,
     },
     lastName: {
       type: String,
@@ -42,11 +43,15 @@ const userSchema = new mongoose.Schema(
     },
     genger: {
       type: String,
-      validate(value) {
-        if (!["male", "female", "others"].includes(value)) {
-          throw new Error("Gender data is not valid");
-        }
+      enum: {
+        values: ["male", "female", "others"],
+        message: `{VALUE} is not a valid gender type`,
       },
+      // validate(value) {
+      //   if (!["male", "female", "others"].includes(value)) {
+      //     throw new Error("Gender data is not valid");
+      //   }
+      // },
     },
     photoUrl: {
       type: String,
@@ -74,6 +79,8 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+userSchema.index({ firstName: 1, lastName: 1 });
+
 userSchema.methods.getJWT = async function () {
   const user = this;
   const token = await jwt.sign({ _id: user._id }, "DEV@Tinder$790", {
@@ -94,6 +101,6 @@ userSchema.methods.validatePassword = async function (passwordInputByUser) {
   return isPasswordValid;
 };
 
-const userModel = mongoose.model("user", userSchema);
+const userModel = new mongoose.model("user", userSchema);
 
 module.exports = userModel;
