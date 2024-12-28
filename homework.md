@@ -110,3 +110,25 @@
 - What are advantages and disadvantages of creating indexes?
 - Read this article about compound indexes - https://www.mongodb.com/docs/manual/indexes/
 - ALWAYS THINK ABOUT CORNER CASES
+
+- Write code with proper validations for POST /request/review/:status/:requestId
+- Thought process - POST vs GET
+- Read about ref and populate
+- Create GET /user/request/received with all checks
+- Crete GET /user/connections
+
+- Logic for GET /feed API
+- Explore the $nin, $and, $ne and other query operators
+- Pagination
+
+NOTES:
+
+/feed?page=1&limit=10 => 1-10 => .skip(0) & limit(10)
+
+/feed?page=10&limit=10 => 10-20 => .skip(10) & limit(10)
+
+/feed?page=20&limit=10 => 20-30 => .skip(20) & limit(10)
+
+/feed?page=30&limit=10 => 30-40 => .skip(30) & limit(10)
+
+skip = (page - 1) \* limit
